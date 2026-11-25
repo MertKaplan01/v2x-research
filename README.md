@@ -43,6 +43,23 @@ RSU ground-contact reprojection ranked the correct Vehicle counterpart first for
 
 Vehicle size-prior localization had 3.053 m conditional median XY error on 902 post-hoc matched Vehicle detections. This result depends on provisional calibration and privileged reference pose. Detailed definitions, caveats, and additional measured findings are in the [final technical report](docs/research/TUMTRAF_FINAL_TECHNICAL_REPORT.md), [evaluation protocol](docs/EVALUATION.md), and [negative-results record](docs/NEGATIVE_RESULTS.md). The [one-page research summary](docs/research/TUMTRAF_ONE_PAGE_SUPERVISOR_SUMMARY.md) provides a concise overview.
 
+## Visual Examples
+
+Selected representative outputs are included with permission for non-commercial academic and research presentation. They show mixed outcomes and complementary observations; association correctness was assessed post hoc.
+
+**Mixed association outcomes (frame 264):** Vehicle/RSU detections and shared BEV, with correct, incorrect, and unverifiable matches.
+
+![Frame 264 mixed association outcomes](examples/visual_demo/01_Mixed_Association_Example.png)
+
+**Complementary Vehicle/RSU detections (frame 135):** observations remain unmatched; this is not a claim of confirmed object recovery.
+
+![Frame 135 complementary detections](examples/visual_demo/02_Complementary_Camera_Detections.png)
+
+**Incorrect or unverifiable associations (frame 271):** a representative limitation of the geometric matching rule.
+
+![Frame 271 incorrect or unverifiable associations](examples/visual_demo/03_Incorrect_Association_Example.png)
+
+[Open the 1-second reference-pose-assisted demo video](examples/visual_demo/04_Reference_Pose_Demo.mp4). The example-level captions and attribution are in [`examples/visual_demo/README.md`](examples/visual_demo/README.md).
 ## Future research direction
 
 **Proposed direction, not an implemented result:** investigate whether temporal static-scene RGB evidence can estimate a camera-derived relative-pose distribution, and whether uncertainty-aware association can preserve coverage by abstaining from risky merges. A future evaluation would need scene-disjoint sequences, independently validated image and calibration conventions, an RGB-only inference firewall, and pre-registered pose, precision, abstention, duplicate, false-merge, and coverage-loss criteria. See the [research proposal](docs/RESEARCH_PROPOSAL.md).
@@ -52,6 +69,7 @@ Vehicle size-prior localization had 3.053 m conditional median XY error on 902 p
 ```text
 src/          perception, localization, and association modules
 scripts/      inference, cached evaluations, figure generation, and audits
+examples/     permissioned representative Vehicle/RSU visual outputs
 tests/        synthetic aggregate-audit fixture
 docs/         architecture, protocol, findings, reports, and proposal
 figures/      architecture schematic and measured aggregate figures
@@ -71,6 +89,6 @@ The independent association utility in `src/release_baseline.py` operates on det
 
 The archived Hungarian aggregate audit can be rerun only when its original per-frame association CSV and baseline summary are available; those intermediate records are not included. Cached fusion, selective-association, and reprojection evaluations also require frozen per-object detection, localization, assignment, and GT records that are not distributed. The detection-benefit inference script additionally requires the dataset, official calibration, YOLO11s weights, and archived Hungarian regression records. Therefore the repository does **not** provide a verified end-to-end reproduction of the reported dataset metrics from a clean checkout. The JSON metric snapshot and figures preserve the reported aggregates; they are not substitutes for the missing intermediate records.
 
-The primary dataset is [TUMTraf-V2X](https://tum-traffic-dataset.github.io/tumtraf-v2x/), introduced by Zimmer *et al.*, [“TUMTraf V2X Cooperative Perception Dataset,” CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/papers/Zimmer_TUMTraf_V2X_Cooperative_Perception_Dataset_CVPR_2024_paper.pdf) (Technical University of Munich and Fraunhofer IVI). See the [official development kit](https://github.com/tum-traffic-dataset/tum-traffic-dataset-dev-kit), [data and licensing notes](docs/DATA_AND_LICENSES.md), and [third-party notices](THIRD_PARTY_NOTICES.md). Dataset imagery is not included because the existing permission covers non-commercial academic presentation but does not explicitly authorize public GitHub redistribution.
+The primary dataset is [TUMTraf-V2X](https://tum-traffic-dataset.github.io/tumtraf-v2x/), introduced by Zimmer *et al.*, [“TUMTraf V2X Cooperative Perception Dataset,” CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/papers/Zimmer_TUMTraf_V2X_Cooperative_Perception_Dataset_CVPR_2024_paper.pdf) (Technical University of Munich and Fraunhofer IVI). See the [official development kit](https://github.com/tum-traffic-dataset/tum-traffic-dataset-dev-kit), [data and licensing notes](docs/DATA_AND_LICENSES.md), and [third-party notices](THIRD_PARTY_NOTICES.md). The representative examples in [`examples/visual_demo/`](examples/visual_demo/README.md) are included with permission for non-commercial academic and research presentation; the full dataset and restricted source assets remain excluded.
 
 Project source is provided under [AGPL-3.0](LICENSE). This license does not grant rights to TUMTraf data, annotations, calibration, poses, model weights, or derived media; obtain those independently under applicable terms.

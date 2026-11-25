@@ -57,3 +57,11 @@ Thumbs.db
 # still ignored by the image rules above.
 !docs/figures/*.png
 !figures/*.png
+
+# Approved representative academic visual examples
+!examples/
+!examples/visual_demo/
+!examples/visual_demo/01_Mixed_Association_Example.png
+!examples/visual_demo/02_Complementary_Camera_Detections.png
+!examples/visual_demo/03_Incorrect_Association_Example.png
+!examples/visual_demo/04_Reference_Pose_Demo.mp4
