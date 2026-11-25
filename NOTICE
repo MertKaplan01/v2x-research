@@ -1,0 +1,10 @@
+TUMTraf-V2X Cooperative Perception research code
+
+Copyright (c) 2026 Mert and project contributors.
+
+The original project source distributed in this repository is licensed under
+the GNU Affero General Public License v3.0; see LICENSE. This notice does not
+license TUMTraf-V2X data, images, labels, point clouds, calibration or
+transformation files, derived media, model weights, or third-party libraries.
+Those materials are excluded unless separately identified under their own
+terms in THIRD_PARTY_NOTICES.md and docs/DATA_AND_LICENSES.md.

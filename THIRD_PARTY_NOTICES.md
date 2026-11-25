@@ -1,0 +1,3 @@
+# Third-party notices
+
+Authored project code is prepared under AGPL-3.0 (`LICENSE`). The research uses Ultralytics YOLO11s under its applicable terms; weights and Ultralytics source are not bundled. NumPy, SciPy, OpenCV, Matplotlib, and Pytest remain third-party dependencies under their own licenses. TUMTraf-V2X dataset assets and devkit source are not bundled; the dataset and official devkit must be obtained separately. The original architecture SVG and aggregate plots are project-generated. This notice does not license third-party data, media, calibration, poses, or weights. See `docs/DATA_AND_LICENSES.md`.

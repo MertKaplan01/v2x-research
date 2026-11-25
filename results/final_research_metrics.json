@@ -1,0 +1,45 @@
+{
+  "scope": "Closed TUMTraf-V2X train-development study: 400 mini-train frames; no validation/test access; descriptive only.",
+  "inference_disclosure": "Vehicle/RSU RGB detection and lifting use a privileged LiDAR-derived per-frame Vehicle-to-S110 pose and a provisional Vehicle projection. This is not strict camera-only operation.",
+  "eligible_gt": 2956,
+  "coverage": {
+    "vehicle_only": {"count": 902, "rate": 0.3051},
+    "rsu_increment_over_vehicle": {"count": 1011, "outside_projected_vehicle_fov": 624, "inside_projected_vehicle_fov_miss": 387},
+    "oracle_gt_deduplicated_union": {"count": 1913, "rate": 0.6472, "deployable": false},
+    "hungarian_operational_output": {"count": 1833, "rate": 0.6201},
+    "isolated_component_selective_output": {"count": 1902, "rate": 0.6434, "pre_registered_gate_passed": false}
+  },
+  "hungarian_association": {
+    "predicted_pairs": 895,
+    "correct": 235,
+    "incorrect": 102,
+    "unverifiable": 558,
+    "co_visible_opportunities": 509,
+    "conditional_recall": 0.4617,
+    "verifiable_precision": 0.6973,
+    "confirmed_duplicates": 150,
+    "coverage_loss_vs_naive_union": 80,
+    "posthoc_unmatched_outputs": 4721,
+    "unmatched_outputs_are_not_confirmed_false_positives": true
+  },
+  "selective_association": {
+    "accepted_pairs": 328,
+    "correct": 53,
+    "incorrect": 12,
+    "unverifiable": 263,
+    "verifiable_precision": 0.8154,
+    "confirmed_duplicates_removed_vs_naive": 66,
+    "gate_failures": ["verifiable_precision_below_0.90", "duplicates_removed_below_127"]
+  },
+  "reprojection_feasibility": {
+    "valid_true_projections": "509/509",
+    "expanded_box_containment": "325/509 (63.85%)",
+    "correct_rank_first": "374/509 (73.48%)",
+    "rank_gate": "80%",
+    "gate_passed": false,
+    "car_rank_first": "252/272 (92.65%)",
+    "person_rank_first": "36/150 (24.00%)",
+    "person_expanded_box_containment": "1/150 (0.67%)"
+  },
+  "source": "See docs/research/TUMTRAF_FINAL_TECHNICAL_REPORT.md and its source-artifact register for complete definitions and limitations."
+}

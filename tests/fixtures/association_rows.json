@@ -1,0 +1,4 @@
+[
+  {"condition":"B_hungarian","vehicle_detections":"2","rsu_detections":"3","spatial_associations":"2","correct_association_pairs":"1","wrong_association_pairs":"0","unverifiable_association_pairs":"1","co_visible_opportunities":"2","successful_opportunities":"1","unmatched_vehicle_by_association":"0","unmatched_rsu_by_association":"1"},
+  {"condition":"B_hungarian","vehicle_detections":"4","rsu_detections":"5","spatial_associations":"3","correct_association_pairs":"1","wrong_association_pairs":"1","unverifiable_association_pairs":"1","co_visible_opportunities":"3","successful_opportunities":"1","unmatched_vehicle_by_association":"2","unmatched_rsu_by_association":"2"}
+]

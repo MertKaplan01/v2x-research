@@ -1,0 +1,8 @@
+# Release-audit environment. Install an Ultralytics-compatible stack only after
+# reviewing the license terms in docs/DATA_AND_LICENSES.md.
+numpy>=1.23,<2.0
+opencv-python>=4.8,<5
+scipy>=1.9,<1.13
+matplotlib>=3.7,<4
+ultralytics>=8.0
+pytest>=7,<9

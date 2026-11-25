@@ -1,0 +1,59 @@
+# Third-party datasets, sensors, labels, calibrations, and derived media
+/data/
+/external/
+/models/
+/outputs/
+/src/*.py
+!/src/release_baseline.py
+!/src/v2x_groundplane_fusion.py
+!/src/v2x_vehicle_size_prior_baseline.py
+!/src/v2x_uncertainty_association.py
+*.zip
+*.pt
+*.pth
+*.onnx
+*.bag
+*.pcd
+*.ply
+*.mp4
+*.avi
+*.jpg
+*.jpeg
+*.png
+*.webp
+**/*calib*.json
+**/*calibration*.json
+**/*transform*.json
+
+# Local environments, caches, editor state, and secrets
+.venv/
+.v2xsim-venv/
+.coopscenes-venv/
+.coopscenes-devkit-inspect/
+.coopscenes-reader-deps/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.env
+.env.*
+*.pem
+*.key
+*.token
+.DS_Store
+Thumbs.db
+*.Zone.Identifier
+*:Zone.Identifier
+/src/v2x_demo/
+
+# Allow small reproducibility artifacts
+!results/
+!results/*.json
+
+# Curated project-generated aggregate figures. Raw/derived dataset imagery is
+# still ignored by the image rules above.
+!docs/figures/*.png
+!figures/*.png

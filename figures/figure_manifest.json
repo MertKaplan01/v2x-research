@@ -1,0 +1,17 @@
+{
+  "sources": {
+    "detection_benefit": "outputs/v2x_detection_benefit/summary.json",
+    "fusion_value": "outputs/v2x_fusion_value/summary.json",
+    "selective": "outputs/v2x_selective_fusion/summary.json",
+    "reprojection": "outputs/v2x_reprojection_feasibility/summary.json",
+    "size_prior": "outputs/v2x_vehicle_size_prior_baseline/summary.json",
+    "oracle_lifting": "outputs/v2x_oracle_lifting_ablation/summary.json",
+    "pose_sensitivity": "outputs/v2x_pose_dependency_audit/pose_sensitivity_summary.json"
+  },
+  "figures": [
+    "association_outcomes.png",
+    "coverage_dedup_tradeoff.png",
+    "localization_oracle_evidence.png",
+    "reprojection_class_disparity.png"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "scope": "Train-development archive audit only. The script never opens validation/test data or runs YOLO.",
+  "inputs": {
+    "archived_summary": "outputs/v2x_uncertainty_association/summary.json",
+    "archived_per_frame": "outputs/v2x_uncertainty_association/per_frame.csv",
+    "size_prior_summary": "outputs/v2x_vehicle_size_prior_baseline/summary.json",
+    "train_label_members_visible": 400
+  },
+  "frozen_baseline_provenance": {
+    "archived_size_prior_sha256": "08e4786de38baa9abc5fff655de984c42c71421e1fd769672c2d82e6a0c8ea0e",
+    "current_size_prior_sha256": "08e4786de38baa9abc5fff655de984c42c71421e1fd769672c2d82e6a0c8ea0e",
+    "matches": true
+  },
+  "association_regression": {
+    "condition": "B_hungarian",
+    "passed": true,
+    "fields": {
+      "frames": {
+        "recomputed": 400,
+        "frozen": 400,
+        "equal": true
+      },
+      "vehicle_detections": {
+        "recomputed": 3120,
+        "frozen": 3120,
+        "equal": true
+      },
+      "rsu_detections": {
+        "recomputed": 4479,
+        "frozen": 4479,
+        "equal": true
+      },
+      "spatial_associations": {
+        "recomputed": 895,
+        "frozen": 895,
+        "equal": true
+      },
+      "correct_association_pairs": {
+        "recomputed": 235,
+        "frozen": 235,
+        "equal": true
+      },
+      "wrong_association_pairs": {
+        "recomputed": 102,
+        "frozen": 102,
+        "equal": true
+      },
+      "unverifiable_association_pairs": {
+        "recomputed": 558,
+        "frozen": 558,
+        "equal": true
+      },
+      "co_visible_opportunities": {
+        "recomputed": 509,
+        "frozen": 509,
+        "equal": true
+      },
+      "successful_opportunities": {
+        "recomputed": 235,
+        "frozen": 235,
+        "equal": true
+      },
+      "unmatched_vehicle_by_association": {
+        "recomputed": 2225,
+        "frozen": 2225,
+        "equal": true
+      },
+      "unmatched_rsu_by_association": {
+        "recomputed": 3584,
+        "frozen": 3584,
+        "equal": true
+      }
+    },
+    "metrics": {
+      "conditional_association_recall": 0.46168958742632615,
+      "verifiable_association_precision": 0.6973293768545994,
+      "confirmed_correct_fraction_all_predicted_pairs": 0.26256983240223464,
+      "all_predicted_pairs_treatment": "Unverifiable pairs remain in the denominator and do not count as confirmed correct."
+    }
+  },
+  "detection_coverage": {
+    "available": false,
+    "reason": "Frozen per-object YOLO detections, lifted positions, and Hungarian assignments are absent. No YOLO/fusion rerun was performed.",
+    "requested_metrics": [
+      "Vehicle-only GT coverage",
+      "RSU-only GT coverage",
+      "GT-deduplicated union oracle coverage",
+      "operational fused-output coverage",
+      "RSU-only missed-by-Vehicle FOV split"
+    ]
+  },
+  "failure_breakdown": {
+    "available": false,
+    "supported_counts": {
+      "correct_associations": 235,
+      "incorrect_associations": 102,
+      "unverifiable_associations": 558,
+      "unmatched_vehicle_after_association": 2225,
+      "unmatched_rsu_after_association": 3584
+    },
+    "unavailable_breakdown": [
+      "missed detections",
+      "invalid lifting",
+      "out-of-gate counterparts",
+      "per-object false merges"
+    ],
+    "reason": "The archived aggregate CSV lacks per-object detection, lift-validity, candidate-gate, and assignment provenance."
+  },
+  "cache_inventory": {
+    "present": {},
+    "missing": [
+      "frozen_yolo_detections",
+      "frozen_lifted_positions",
+      "frozen_hungarian_assignments"
+    ],
+    "coverage_reconstructible": false
+  },
+  "uncertainty": {
+    "independent_scene_intervals": "Not reported. Six train-development scene groups are not declared leakage-safe independent evaluation scenes.",
+    "descriptive_only": true
+  },
+  "release_implication": "Association baseline is reproducible from archived aggregate records; coverage and stage-level metrics are unavailable from cached data and must not be reported as reconstructed."
+}
